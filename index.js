@@ -1,11 +1,10 @@
 const fs = require("fs")
-var fsmem = {};
 
-fsmem.dataDirectory = "."
-fsmem.changeDataDirectory = function(dir){ fsmem.dataDirectory = dir };
+exports.dataDirectory = "."
+exports.changeDataDirectory = function(dir){ exports.dataDirectory = dir };
 
-fsmem.dataFile = "data.dat"
-fsmem.changeDataFile = function(fil){ fsmem.dataFile = fil };
+exports.dataFile = "data.dat"
+exports.changeDataFile = function(fil){ exports.dataFile = fil };
 
 async function rectifyDataType(str){
 	if (str.indexOf('"') == 0 && str.indexOf('"',1) > -1){ return str.slice(1).slice(0, -1) };
@@ -32,8 +31,8 @@ async function rectifyDataType(str){
 }
 
 async function interpretDataStructure(){
-	if (fs.existsSync(fsmem.dataDirectory + "/" + fsmem.dataFile)){
-		var data = fs.readFileSync(fsmem.dataDirectory + "/" + fsmem.dataFile, "utf8").toString().replace(/\r/g, "").split(/\n/g);
+	if (fs.existsSync(exports.dataDirectory + "/" + exports.dataFile)){
+		var data = fs.readFileSync(exports.dataDirectory + "/" + exports.dataFile, "utf8").toString().replace(/\r/g, "").split(/\n/g);
 		var returntable = {};
 		var promz = new Promise((resolve, reject) => {
 			data.forEach(async function(line, index){
@@ -76,37 +75,35 @@ async function objectEncodeToText(arr){
 	return promz;
 }
 
-fsmem.getValue = async function(id){
+exports.getValue = async function(id){
 	var table = await interpretDataStructure()
 	var retval = (table[id] || "undefined")
 	return retval
 }
 
-fsmem.setValue = async function(id, val){
+exports.setValue = async function(id, val){
 	var table = await interpretDataStructure()
 	table[id] = val;
 	var data = await objectEncodeToText(table)
-	fs.writeFileSync(fsmem.dataDirectory + "/" + fsmem.dataFile, data, "utf8", (err) => {
+	fs.writeFileSync(exports.dataDirectory + "/" + exports.dataFile, data, "utf8", (err) => {
 		if (err) throw err;
 	});
 	return id;
 }
 
-fsmem.delValue = async function(id){
+exports.delValue = async function(id){
 	var table = await interpretDataStructure()
 	delete table[id];
 	var data = await objectEncodeToText(table)
-	fs.writeFileSync(fsmem.dataDirectory + "/" + fsmem.dataFile, data, "utf8", (err) => {
+	fs.writeFileSync(exports.dataDirectory + "/" + exports.dataFile, data, "utf8", (err) => {
 		if (err) throw err;
 	});
 	return id;
 }
 
-fsmem.clear = async function(){
-	fs.writeFileSync(fsmem.dataDirectory + "/" + fsmem.dataFile, "", "utf8", (err) => {
+exports.clear = async function(){
+	fs.writeFileSync(exports.dataDirectory + "/" + exports.dataFile, "", "utf8", (err) => {
 		if (err) throw err;
 	});
 	return val;	
 }
-
-return fsmem
