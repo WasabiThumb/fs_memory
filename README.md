@@ -10,7 +10,7 @@ npm install fs_memory_bits
 
 To include it in your project, place this header in your JavaScript file.
 ```
-const fsmem = require("fs_memory_bits")
+const fsb = require("fs_memory_bits")
 ```
 
 ### Usage
