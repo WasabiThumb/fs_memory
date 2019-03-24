@@ -35,7 +35,7 @@ Quick rundown of all of the functions
 ```
 fsb.setValue(string id, string value)
 ```
-Returns Promise<string id>
+Returns Promise<string id>\n
 Accepts boolean, array, integer, and string values. Attaches a value to an ID which can be accessed with getValue, even across sessions.
 
 ```
