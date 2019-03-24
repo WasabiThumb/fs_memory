@@ -35,7 +35,7 @@ Quick rundown of all of the functions
 ```
 fsb.setValue(string id, string value)
 ```
-*Returns Promise <string id>*
+*Returns Promise\<string id\>*
 Accepts boolean, array, integer, and string values. Attaches a value to an ID which can be accessed with getValue, even across sessions.
 
 ```
@@ -59,7 +59,7 @@ Changes the default data.dat filename.
 ```
 fsb.delValue(id)
 ```
-*Returns Promise <string id>*
+*Returns Promise \<string id\>*
 Removes the existance of both the value and self of the ID specified.
 
 ```
