@@ -1,5 +1,5 @@
 {
-  "name": "fs_memory",
+  "name": "fs_memory_bits",
   "version": "0.0.1",
   "description": "A lightweight wrapper for fs made to store small, indexed information.",
   "main": "index.js",
