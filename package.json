@@ -1,0 +1,28 @@
+{
+  "name": "fs_memory",
+  "version": "0.0.1",
+  "description": "A lightweight wrapper for fs made to store small, indexed information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "fsmem"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WasabiThumb/fs_memory.git"
+  },
+  "keywords": [
+    "fs",
+    "memory",
+    "file",
+    "save",
+    "variable",
+    "storage",
+    "data"
+  ],
+  "author": "WasabiThumbs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WasabiThumb/fs_memory/issues"
+  },
+  "homepage": "https://github.com/WasabiThumb/fs_memory#readme"
+}
