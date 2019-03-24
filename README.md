@@ -59,7 +59,7 @@ Changes the default data.dat filename.
 ```
 fsb.delValue(id)
 ```
-*Returns Promise \<string id\>*
+*Returns Promise\<string id\>*
 Removes the existance of both the value and self of the ID specified.
 
 ```
