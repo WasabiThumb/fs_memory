@@ -33,7 +33,7 @@ fsb.changeDataFile("someFile.name")
 Quick rundown of all of the functions
 
 ```
-fsb.setValue(string id, string value)
+fsb.setValue(string id, any value)
 ```
 *Returns Promise\<string id\>*
 Accepts boolean, array, integer, and string values. Attaches a value to an ID which can be accessed with getValue, even across sessions.
