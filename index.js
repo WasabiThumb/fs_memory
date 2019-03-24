@@ -105,5 +105,4 @@ exports.clear = async function(){
 	fs.writeFileSync(exports.dataDirectory + "/" + exports.dataFile, "", "utf8", (err) => {
 		if (err) throw err;
 	});
-	return val;	
 }
